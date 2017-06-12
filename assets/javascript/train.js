@@ -41,4 +41,22 @@ $(document).ready(function() {
 
 
         return false;
-   
+    });
+
+    //call on the database everytime information is sent to the database
+    database.ref().on("child_added", function(childSnapshot) {
+
+            //push the values of childSnapshot to the childSnapShotArray
+            childSnapshotArray.push(childSnapshot.val());
+
+            render();
+
+        }, // Handle the errors
+        function(errorObject) {
+            console.log("Errors handled: " + errorObject.code);
+        });
+
+
+
+
+
