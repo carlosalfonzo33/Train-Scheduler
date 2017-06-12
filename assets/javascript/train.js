@@ -56,6 +56,35 @@ $(document).ready(function() {
             console.log("Errors handled: " + errorObject.code);
         });
 
+    function minutesAway(startTime, frequency) {
+
+        //set the current time
+        var currentTime = moment();
+        console.log(currentTime);
+        //set the startTimeMinutes variable equal to the difference between the current time and the start time
+        var startTimeMinutes = currentTime.diff(moment(startTime, "HH:mm"), "minutes");
+        console.log(startTimeMinutes);
+
+        //calculate the number of trains bu subtracting the currentTime from the startTime and dividing by the frequency and get a whole number
+        var numberOfTrains = Math.floor(startTimeMinutes / frequency);
+        console.log(numberOfTrains);
+
+        //calculate the lastTrainTime multiplied by the frequency and add to the startTime
+        var lastTrainTime = (numberOfTrains * frequency);
+        console.log(lastTrainTime);
+
+        //calculate the next arrival by taking the lastTrainTime plus the frequency
+        var nextArrivalMinutesPastStartTime = lastTrainTime + frequency;
+        console.log(nextArrivalMinutesPastStartTime);
+
+        //calculate minutes away by taking the current starttime and adding next arrival minutes and taking the difference from the current starttime
+        var minutesAway = moment(startTime, "HH:mm").add(nextArrivalMinutesPastStartTime, "minutes").diff(currentTime, "minutes");
+        console.log(minutesAway);
+        //return the minutes away
+        return minutesAway;
+    }
+
+
 
 
 
