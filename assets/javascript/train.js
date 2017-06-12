@@ -84,6 +84,54 @@ $(document).ready(function() {
         return minutesAway;
     }
 
+    //define nextArrival function
+    function nextArrival(minsAway) {
+
+        //use the minsAway argument to return the current time and add the minutes away and format
+        return moment().add(minsAway, "minutes").format("HH:mm");
+        console.log(nextArrival)
+    }
+
+    //define a render function that renders the DOM everytime the childsnapshot.val is run
+    function render() {
+
+        //set a variable to an empty div and do all the calculations before appending the DOM
+        var rows = $("<div>");
+
+        //for loop to iterate over childsnapshotarray 
+        for (var i = 0; i < childSnapshotArray.length; i++) {
+
+            //set a row equal to a html tr element
+            var row = $('<tr>');
+
+            //set a variable equal to the index of the childSnapshotArray
+            var information = childSnapshotArray[i];
+
+            //set the minutesAway to the minutes away function with the values of the startTime and frequency as arguments
+            var minsAway = minutesAway(information.startTime, information.frequency);
+
+            //append the row variable with the cell to hold the text of the value of the variables 
+            $(row).append($('<td>').text(information.name));
+            $(row).append($('<td>').text(information.destination));
+            $(row).append($('<td>').text(information.frequency));
+            $(row).append($('<td>').text(nextArrival(minsAway)));
+            $(row).append($('<td>').text(minsAway));
+
+            //append the rows variable with the variable row
+            rows.append(row);
+        }
+        //empty the table body and append the rows div with the rows 
+        $('#table-body').empty().append(rows.children());
+    }
+
+    setTimeout(function() {
+        render(); //run this function every minute
+        setInterval(render, 1000 * 60);
+
+
+    }, (1000 - new Date().getMilliseconds()) + ((60 - new Date().getSeconds()) * 1000));
+
+});
 
 
 
