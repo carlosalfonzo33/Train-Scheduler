@@ -22,3 +22,35 @@ h3 {
   font-family: 'Impact, Charcoal', sans-serif;
   font-weight: bold;
 }
+
+#add-train {
+   border-top: 1px solid #c7eaff;
+   background: #97bfd9;
+   background: -webkit-gradient(linear, left top, left bottom, from(#284f69), to(#97bfd9));
+   background: -webkit-linear-gradient(top, #284f69, #97bfd9);
+   background: -moz-linear-gradient(top, #284f69, #97bfd9);
+   background: -ms-linear-gradient(top, #284f69, #97bfd9);
+   background: -o-linear-gradient(top, #284f69, #97bfd9);
+   padding: 9.5px 19px;
+   -webkit-border-radius: 20px;
+   -moz-border-radius: 20px;
+   border-radius: 20px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: white;
+   font-size: 15px;
+   font-family: 'Lucida Grande', Helvetica, Arial, Sans-Serif;
+   text-decoration: none;
+   vertical-align: middle;
+   }
+#add-train:hover {
+   border-top-color: #28597a;
+   background: #28597a;
+   color: #ccc;
+   }
+#add-train:active {
+   border-top-color: #9abed6;
+   background: #9abed6;
+   }
