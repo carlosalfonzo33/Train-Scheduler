@@ -6,5 +6,4 @@ a train schedule application that incorporates Firebase to host arrival and depa
 
 <img width="1611" alt="screen shot 2017-10-01 at 8 55 01 pm" src="https://user-images.githubusercontent.com/25913749/31063763-ef9eb6b8-a6ea-11e7-8291-acdfb9fccd24.png">
 
-
 <img width="1614" alt="screen shot 2017-10-01 at 8 55 15 pm" src="https://user-images.githubusercontent.com/25913749/31063767-fa398594-a6ea-11e7-8fae-ec00e740aa08.png">
